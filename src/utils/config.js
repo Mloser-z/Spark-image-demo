@@ -1,0 +1,5 @@
+export const app_id = "c9e3991e"
+export const api_secret = "MjE4YTNkNzgxODM5OWE2NzhiZTg2ZDcx"
+export const api_key = "650e044e4048ec3bf9edfd914823821c"
+export const host = "spark-api.cn-huabei-1.xf-yun.com"
+export const path = "/v2.1/image"
