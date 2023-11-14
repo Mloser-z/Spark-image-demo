@@ -45,6 +45,7 @@ const props = defineProps({
     image_base64: String
 });
 
+//TODO: 点击按钮后的发送与接收，以及如何进一步封装api
 const send = () => {
     console.log(prompt.value);
     prompt.value = "";
