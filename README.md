@@ -9,7 +9,7 @@ npm install
 ```
 npm run serve
 ```
-
+运行后先点击上传图片，选择图片后再进行文本对话。
 ### Compiles and minifies for production
 ```
 npm run build
