@@ -1,7 +1,7 @@
 <template>
     <div class="chat-content">
-        <!-- recordContent 聊天记录数组-->
-        <div v-for="record in props.recordContent" :key="record[1]">
+        <!-- recordContents 聊天记录数组-->
+        <div v-for="record in props.recordContents" :key="record[1]">
             <!-- AI -->
             <div class="word" v-if="record[0].role != 'user'">
                 <img src="bot.png">
@@ -29,8 +29,10 @@ export default {
 
 <script setup>
 import { defineProps } from 'vue';
+
+// 父组件传递聊天记录
 const props = defineProps({
-    recordContent: Array
+    recordContents: Array
 });
 
 </script>
@@ -43,7 +45,7 @@ const props = defineProps({
 
 .word {
     display: flex;
-    margin: 10px 0 10px 20px;
+    margin: 10px 100px 10px 20px;
 }
 
 img {
@@ -63,6 +65,8 @@ img {
     position: relative;
     margin-top: 8px;
     border-radius: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .info-content::before {
@@ -78,7 +82,7 @@ img {
 .word-my {
     display: flex;
     justify-content: flex-end;
-    margin: 10px 20px 10px 0;
+    margin: 10px 20px 10px 100px;
 }
 
 .info-my {
@@ -99,6 +103,8 @@ img {
     text-align: left;
     color: #ffffff;
     border-radius: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .info-content-my::after {

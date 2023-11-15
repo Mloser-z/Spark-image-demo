@@ -15,15 +15,27 @@ export default {
 </script>
 
 <script setup>
-import { ref, defineEmits } from 'vue';
+import { ref, defineEmits, defineProps } from 'vue';
 
 const textarea = ref()
-const prompt = ref();
+const prompt = ref("");
 const emits = defineEmits(['postChatPrompt']);
+const props = defineProps({ isConnected: Boolean })
 
 const sendBtnClick = () => {
-    emits('postChatPrompt', prompt.value);
-    prompt.value = "";
+    // 消息为空或WebSocket没有连接时，不能发送信息
+    if (prompt.value === "") {
+        alert("消息不能为空");
+    }
+    else if (!props.isConnected) {
+        alert("等待WebSocket连接");
+    }
+    else {
+        console.log(prompt.value)
+        emits('postChatPrompt', prompt.value);
+        prompt.value = "";
+    }
+
 }
 
 // 自动调整textarea高度
