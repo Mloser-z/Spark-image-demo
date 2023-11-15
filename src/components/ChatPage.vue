@@ -1,6 +1,6 @@
 <template>
     <div class="chat-page">
-        <ContentBox :recordContent="textRecordContents" />
+        <ContentBox :recordContents="textRecordContents" />
         <SendBox @postChatPrompt="send" :isConnected="connect" />
     </div>
 </template>
